@@ -3,7 +3,7 @@ from google.cloud import firestore
 import datetime
 #import firebase_admin
 #from firebase_admin import credentials
-from firebase_admin import firestore
+#from firebase_admin import firestore
 from datetime import timezone
 # To make things easier later, we're also importing numpy and pandas for
 # working with sample data.
