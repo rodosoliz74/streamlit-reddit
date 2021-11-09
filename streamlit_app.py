@@ -95,7 +95,7 @@ for doc in posts_ref.stream():
 	Cdato_6 = post["dato6"]
 
 
-
+"""
 st.write(coleccion)
 st.write("Tabla 1")
 st.write(pd.DataFrame({
@@ -115,7 +115,7 @@ st.vega_lite_chart(df1, {
     },
 }
 )
-
+""""
 
 st.write("Tabla 2")
 st.write(pd.DataFrame({
