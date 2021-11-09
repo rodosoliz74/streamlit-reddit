@@ -1,15 +1,15 @@
 import streamlit as st
 from google.cloud import firestore
 import datetime
-#import firebase_admin
-#from firebase_admin import credentials
-#from firebase_admin import firestore
+import firebase_admin
+from firebase_admin import credentials
+from firebase_admin import firestore
 from datetime import timezone
 import numpy as np
 import pandas as pd
-#import seaborn as sns
-#import plotly.figure_factory as ff
-#import matplotlib.pyplot as plt
+import seaborn as sns
+import plotly.figure_factory as ff
+import matplotlib.pyplot as plt
 
 # With:
 import json
@@ -23,7 +23,7 @@ keyfile_data = json.loads(st.secrets["textkey"])
 #creds = ServiceAccountCredentials.from_json_keyfile_dict(keyfile_data)
 #db = firestore.Client(credentials=creds, project="streamlit-reddit")
 
-db = firestore.Client.from_service_account_json("firestore-key.json")
+db = firestore.Client.from_service_account_json(".streamlit/firestore-key.json")
 
 
 apptitle = 'Data Dispersion Device'
@@ -96,10 +96,29 @@ for doc in posts_ref.stream():
 
 
 
+st.write(coleccion)
+st.write("Tabla 1")
+st.write(pd.DataFrame({
+    ('Cordenada x': [Adato_1[0], Adato_2[0], Adato_3[0], Adato_4[0],Adato_5[0],Adato_6[0]]),
+    'Cordenada y': [Adato_1[1], Adato_2[1], Adato_3[1], Adato_4[1],Adato_5[1],Adato_6[1]],
+    'Distancia de centro': [Adato_1[2], Adato_2[2], Adato_3[2], Adato_4[2],Adato_5[2],Adato_6[2]],}))
+
+df1 = pd.DataFrame({'Eje X':[Adato_1[0], Adato_2[0], Adato_3[0], Adato_4[0],Adato_5[0],Adato_6[0]],
+                   'Eje Y':[Adato_1[1], Adato_2[1], Adato_3[1], Adato_4[1],Adato_5[1],Adato_6[1]]})
+index_ = ['1', '2', '3', '4', '5','6']
+st.vega_lite_chart(df1, {
+    'mark': {'type': 'circle', 'tooltip': True},
+    'encoding': {
+        'x': {'field': 'Eje X', 'type': 'quantitative'},
+	'y': {'field': 'Eje Y', 'type': 'quantitative'},
+    },
+}
+)
+
 
 st.write("Tabla 2")
 st.write(pd.DataFrame({
-    #'Cordenada x': [Bdato_1[0], Bdato_2[0], Bdato_3[0], Bdato_4[0],Bdato_5[0],Bdato_6[0]],
+    'Cordenada x': [Bdato_1[0], Bdato_2[0], Bdato_3[0], Bdato_4[0],Bdato_5[0],Bdato_6[0]],
     'Cordenada y': [Bdato_1[1], Bdato_2[1], Bdato_3[1], Bdato_4[1],Bdato_5[1],Bdato_6[1]],
     'Distancia de centro': [Bdato_1[2], Bdato_2[2], Bdato_3[2], Bdato_4[2],Bdato_5[2],Bdato_6[2]],
 })
