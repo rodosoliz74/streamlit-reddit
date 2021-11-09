@@ -1,15 +1,15 @@
 import streamlit as st
 from google.cloud import firestore
 import datetime
-import firebase_admin
-from firebase_admin import credentials
-from firebase_admin import firestore
+#import firebase_admin
+#from firebase_admin import credentials
+#from firebase_admin import firestore
 from datetime import timezone
 import numpy as np
 import pandas as pd
-import seaborn as sns
-import plotly.figure_factory as ff
-import matplotlib.pyplot as plt
+#import seaborn as sns
+#import plotly.figure_factory as ff
+#import matplotlib.pyplot as plt
 
 # With:
 import json
