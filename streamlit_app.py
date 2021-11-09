@@ -99,7 +99,7 @@ for doc in posts_ref.stream():
 st.write(coleccion)
 st.write("Tabla 1")
 st.write(pd.DataFrame({
-    ('Cordenada x': [Adato_1[0], Adato_2[0], Adato_3[0], Adato_4[0],Adato_5[0],Adato_6[0]]),
+    'Cordenada x': [Adato_1[0], Adato_2[0], Adato_3[0], Adato_4[0],Adato_5[0],Adato_6[0]],
     'Cordenada y': [Adato_1[1], Adato_2[1], Adato_3[1], Adato_4[1],Adato_5[1],Adato_6[1]],
     'Distancia de centro': [Adato_1[2], Adato_2[2], Adato_3[2], Adato_4[2],Adato_5[2],Adato_6[2]],}))
 
