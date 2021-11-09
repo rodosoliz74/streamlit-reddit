@@ -1,7 +1,7 @@
 import streamlit as st
 from google.cloud import firestore
 import datetime
-import firebase_admin
+#import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import firestore
 from datetime import timezone
